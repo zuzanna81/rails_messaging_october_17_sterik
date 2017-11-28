@@ -1,6 +1,6 @@
-#Working with legacy code
+# Working with legacy code
 
-##Week 5 assessment at Craft Academy, St: Erik team
+## Week 5 assessment at Craft Academy, St: Erik team
 
 **About the assessment**
 
