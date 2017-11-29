@@ -4,9 +4,9 @@ Feature: Landing page
   I should see the landing page
 
 Scenario: Display on the landing page
-  Given There is a landing page
   When I visit the landing page
   Then I should see a title "Craft Academy Mailboxer"
   And I should see a link "CA Mailboxer"
   And I should see a link "Login"
   And I should see a link "Sign up"
+  And I should see a header
