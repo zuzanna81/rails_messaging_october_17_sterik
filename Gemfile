@@ -20,9 +20,12 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry-byebug'
   gem 'spring'
-  gem 'web-console', '~> 2.0'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+end
+
+group :development do
+  gem 'web-console', '~> 2.0'
 end
 
 group :production do
