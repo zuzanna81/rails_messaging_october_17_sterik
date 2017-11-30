@@ -3,7 +3,7 @@ Given("I am on the {string} page") do |page_name|
 end
 
 When("I press the {string} button") do |login|
-  click_link login
+  click_link_or_button login
 end
 
 Then("I should be redirected to the {string} page") do |page_name|
@@ -28,5 +28,6 @@ end
 def page_path_from(page_name)
   case page_name.downcase
     when 'login' then '/users/sign_in'
+    when 'landing' then '/'
   end
 end
