@@ -54,4 +54,28 @@ Feature: Login Feature
     Then I should see "You are already signed in."
 
 
+<<<<<<< HEAD
   
+=======
+  Scenario: Visitor clicks on sign up from login page
+    Given I am on the "Login" page
+    When I press the "Forgot your password?" button
+    Then I should be redirected to the "Password New" page
+    And I should see "Forgot your password?"
+    And I should see "Email"
+
+
+  Scenario: Visitor clicks on Send me reset password instructions with value in email [Happy Path]
+    Given I am on the "Password New" page
+    When I fill in "Email" with "hotmale@hotmail.com"
+    And I press the "Send me reset password instructions" button
+    Then I should not see "1 error prohibited this user from being saved:"
+    Then I should not see "Email can't be blank"
+
+
+  Scenario: Visitor clicks on Send me reset password instructions with nil value in email [Sad Path]
+    Given I am on the "Password New" page
+    When I press the "Send me reset password instructions" button
+    Then I should see "1 error prohibited this user from being saved:"
+    Then I should see "Email can't be blank"
+>>>>>>> 98ccedab569b2f4213b01b07611ad11cf51497bc

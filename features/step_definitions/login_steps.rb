@@ -33,12 +33,8 @@ When("I try to visit the {string} page") do |page_name|
   visit page_path_from(page_name)
 end
 
-Then("show me the page") do
-  save_and_open_page
-end
-
-Then("I log out") do
-  logout
+Then("I should not see {string}") do |text|
+  expect(page).not_to have_content text
 end
 
 def page_path_from(page_name)
@@ -46,5 +42,6 @@ def page_path_from(page_name)
     when 'login' then '/users/sign_in'
     when 'landing' then '/'
     when 'inbox' then '/mailbox/inbox'
+    when 'password new' then '/users/password/new'
   end
 end
