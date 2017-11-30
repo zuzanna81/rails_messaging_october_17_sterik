@@ -1,9 +1,9 @@
-Given("there is a landing page") do
-  visit root_path
+Given("I am on the {string} page") do |page_name|
+  visit page_path_from(page_name)
 end
 
-When("I click on {string} link") do |link|
-  click_link link
+When("I press the {string} button") do |login|
+  click_link login
 end
 
 Then("I should be redirected to the {string} page") do |page_name|

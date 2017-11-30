@@ -3,7 +3,7 @@ Feature: Login link
   In order to access the Craft Academy's Mailboxer
   I should be able to login
 
-  Scenario: As a user I want to be able to login to my account
-    Given there is a landing page
-    When I click on "Login" link
-    Then I should be redirected to the "Sign in" page
+  Scenario: Access Sign Up page
+    Given I am on the "Landing" page
+    When I press the "Login" button
+    Then I should be redirected to the "Login" page
