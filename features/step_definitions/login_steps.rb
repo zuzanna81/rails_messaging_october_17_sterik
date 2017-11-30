@@ -33,6 +33,10 @@ When("I try to visit the {string} page") do |page_name|
   visit page_path_from(page_name)
 end
 
+Then("I should see button {string}") do |button_name|
+  expect(page).to have_button button_name
+end
+
 Then("I should not see {string}") do |text|
   expect(page).not_to have_content text
 end

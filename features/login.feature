@@ -60,6 +60,7 @@ Feature: Login Feature
     Then I should be redirected to the "Password New" page
     And I should see "Forgot your password?"
     And I should see "Email"
+    And I should see button "Send me reset password"
 
 
   Scenario: Visitor clicks on Send me reset password instructions with value in email [Happy Path]
