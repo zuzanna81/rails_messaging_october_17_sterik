@@ -9,4 +9,4 @@ Scenario: Display on the landing page
   And I should see a link "CA Mailboxer"
   And I should see a link "Login"
   And I should see a link "Sign up"
-  And I should see a header
+  
