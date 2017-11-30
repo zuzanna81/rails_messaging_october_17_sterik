@@ -7,5 +7,5 @@ When("I click on {string} link") do |link|
 end
 
 Then("I should be redirected to the users sign in page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit '/users/sign_in'
 end
