@@ -54,9 +54,6 @@ Feature: Login Feature
     Then I should see "You are already signed in."
 
 
-<<<<<<< HEAD
-  
-=======
   Scenario: Visitor clicks on sign up from login page
     Given I am on the "Login" page
     When I press the "Forgot your password?" button
@@ -79,4 +76,3 @@ Feature: Login Feature
     When I press the "Send me reset password instructions" button
     Then I should see "1 error prohibited this user from being saved:"
     Then I should see "Email can't be blank"
->>>>>>> 98ccedab569b2f4213b01b07611ad11cf51497bc
