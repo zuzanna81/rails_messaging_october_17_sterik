@@ -54,9 +54,24 @@ Feature: Login Feature
     Then I should see "You are already signed in."
 
 
-  Scenario: Visitor attempts to logout
-    Given I am signed in as "Arnold"
-    And I am on the "Inbox" page
-    When I press the "Logout" button
-    Then I should be redirected to the "Landing" page
-    And I should see "Signed out successfully."
+  Scenario: Visitor clicks on sign up from login page
+    Given I am on the "Login" page
+    When I press the "Forgot your password?" button
+    Then I should be redirected to the "Password New" page
+    And I should see "Forgot your password?"
+    And I should see "Email"
+
+
+  Scenario: Visitor clicks on Send me reset password instructions with value in email [Happy Path]
+    Given I am on the "Password New" page
+    When I fill in "Email" with "hotmale@hotmail.com"
+    And I press the "Send me reset password instructions" button
+    Then I should not see "1 error prohibited this user from being saved:"
+    Then I should not see "Email can't be blank"
+
+
+  Scenario: Visitor clicks on Send me reset password instructions with nil value in email [Sad Path]
+    Given I am on the "Password New" page
+    When I press the "Send me reset password instructions" button
+    Then I should see "1 error prohibited this user from being saved:"
+    Then I should see "Email can't be blank"
