@@ -1,20 +1,29 @@
 Given("the following user exists") do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
+  table.hashes.each do |user|
+    User.create(user)
+  end
 end
 
-Given("I am signed is as {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Given("I am signed in as {string}") do |user|
+   user = User.find_by(name: user)
+   login_as(user, scope: :user)
 end
 
-When("I am on the {string} page") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+When("I visit the {string} page") do |page_name|
+  visit page_path_from(page_name)
 end
 
-Then("I should see the {string} button") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I should see the {string} button") do |link|
+  expect(page).to have_link link
 end
 
-Then("I should have {string} messages") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+# Then("I should have {string} messages") do |expected_count|
+#
+# end
+
+
+def page_path_from(page_name)
+  case page_name.downcase
+    when 'inbox' then '/mailbox/inbox'
+  end
 end
