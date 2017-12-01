@@ -21,6 +21,8 @@ group :development, :test do
   gem 'spring'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'launchy'
   gem 'coveralls', require: false
 end
 
